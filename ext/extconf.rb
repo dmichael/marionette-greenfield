@@ -1,4 +1,4 @@
-require '../extinclude.rb'
+require 'extinclude.rb'
 
 # copy the files you need into a tmp dir that will be deleted
 candidates = Dir.glob([
