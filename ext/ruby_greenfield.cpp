@@ -131,6 +131,28 @@ static VALUE Greenfield_get_call_potential(VALUE self)
 	return rb_float_new((double)potential);
 }
 
+static VALUE Greenfield_set_max_neighbors(VALUE self, VALUE number)
+{
+  if(TYPE(number) == T_FIXNUM){
+    Greenfield *greenfield;
+    Data_Get_Struct(self, Greenfield, greenfield);
+    float v = (float) NUM2INT(number);
+    greenfield->setMaxNeighbors( v );    
+  }
+  else{
+    rb_raise(rb_eTypeError, "Wrong argument type (Please use and INT)");
+  }
+	return self;
+}
+
+static VALUE Greenfield_get_max_neighbors(VALUE self) 
+{
+  Greenfield *greenfield;
+  Data_Get_Struct(self, Greenfield, greenfield);
+  int number = greenfield->maxNeighbors();
+	return rb_int_new(number);
+}
+
 static VALUE Greenfield_initialize(int argc, VALUE *argv, VALUE self)
 {
   // get the Unit instance
@@ -240,6 +262,9 @@ extern "C" void Init_greenfield()
   
   rb_define_method(GreenfieldClass, "call_potential", (VALUE(*)(...)) Greenfield_get_call_potential, 0);
   rb_define_method(GreenfieldClass, "call_potential=", (VALUE(*)(...)) Greenfield_set_call_potential, 1);
+  
+  rb_define_method(GreenfieldClass, "max_neighbors=", (VALUE(*)(...)) Greenfield_set_max_neighbors, 1);
+  rb_define_method(GreenfieldClass, "max_neighbors", (VALUE(*)(...)) Greenfield_get_max_neighbors, 0);
   
   rb_include_module(GreenfieldClass, UnitModule);
 }

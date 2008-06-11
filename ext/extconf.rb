@@ -4,21 +4,21 @@ require '../extinclude.rb'
 candidates = Dir.glob([
   "ruby_greenfield.cpp",
   "../shared.h",  
-  "../../stk/soundcard.*",
-  "../../stk/RtAudio.*",
-  "../../stk/RtError.*",
-  "../../stk/Stk.*",
-  "../../stk/FileWvIn.*",
-  "../../stk/FileRead.*",
-  "../../stk/WvIn.*",
+  "../stk/soundcard.*",
+  "../stk/RtAudio.*",
+  "../stk/RtError.*",
+  "../stk/Stk.*",
+  "../stk/FileWvIn.*",
+  "../stk/FileRead.*",
+  "../stk/WvIn.*",
   
     
-  "../../unnature/Greenfield.*",
+  "../lib/Greenfield.*",
   
-  "../../marionette/SoundFile.*",
-  "../../marionette/Observable.*",
-  "../../marionette/Unit.*",
-  "../../marionette/Rand.*"
+  "../lib/SoundFile.*",
+  "../lib/Observable.*",
+  "../lib/Unit.*",
+  "../lib/Rand.*"
   ]
 )
 
