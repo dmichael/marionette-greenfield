@@ -33,4 +33,4 @@ FileUtils.mkdir_p tmp_dir
 FileUtils.rm_r tmp_dir, :verbose => true, :force => true # prepare the directory that we are going to build in
 FileUtils.cp_r source_files, tmp_dir, :verbose => true
 
-create_makefile("unnature", "tmp")
+create_makefile("greenfield", "tmp")

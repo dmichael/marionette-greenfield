@@ -1,6 +1,6 @@
 require 'rubygems'
 spec = Gem::Specification.new do |s|
-  s.name = "unnature"
+  s.name = "greenfield"
   s.version = "0.0.1"
   s.author = "David M Michael"
   s.email = "david@unnature.net"
