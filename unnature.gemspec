@@ -7,7 +7,7 @@ spec = Gem::Specification.new do |s|
   s.homepage = "http://unnature.net"
   s.platform = Gem::Platform::RUBY
   s.summary = "Unnature extentions to Marionette."
-  candidates = Dir.glob("{ext,../lib,../marionette,../stk,../test,lib}/**/*")
+  candidates = Dir.glob("{ext,lib,stk,test,lib}/**/*")
   s.files = candidates.delete_if do |item|
               item.include?(".svn")
               item.include?("marionette.rb")
